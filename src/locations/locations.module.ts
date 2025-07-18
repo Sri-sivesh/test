@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
-import { Module } from "@nestjs/common";
-import { LocationsController } from "./locations.controller";
-import { LocationsService } from "./locations.service";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { Location } from "src/locations/location.entity";
+import { Module } from '@nestjs/common';
+import { LocationsController } from './locations.controller';
+import { LocationsService } from './locations.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Location } from 'src/locations/locations.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Location])],
@@ -11,4 +11,4 @@ import { Location } from "src/locations/location.entity";
   providers: [LocationsService],
   exports: [LocationsService],
 })
-export class LocationsModule { }
+export class LocationsModule {}

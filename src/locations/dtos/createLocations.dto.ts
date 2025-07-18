@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty, IsOptional, IsString, IsUUID } from "class-validator";
-import { UUID } from "crypto";
+import { IsNotEmpty, IsOptional, IsString, IsUUID } from 'class-validator';
+import { UUID } from 'crypto';
 
 export class createLocationsDto {
   @IsUUID()

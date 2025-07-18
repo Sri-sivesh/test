@@ -1,16 +1,16 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { TicketBooking } from "src/ticket-booking/ticket-booking.entity";
-import { Repository } from "typeorm";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { TicketBooking } from 'src/ticket-booking/ticket-booking.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class TicketBookingService {
   constructor(
     @InjectRepository(TicketBooking)
     private readonly TicketBookingRepo: Repository<TicketBooking>,
-  ) { }
+  ) {}
 
   async createTicketBooking(
     data: Partial<TicketBooking>,

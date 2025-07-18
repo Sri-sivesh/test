@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty, IsTimeZone, IsUUID } from "class-validator";
-import { UUID } from "crypto";
+import { IsNotEmpty, IsTimeZone, IsUUID } from 'class-validator';
+import { UUID } from 'crypto';
 
 export class createTicketBookingDto {
   @IsUUID()

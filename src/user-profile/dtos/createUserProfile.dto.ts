@@ -6,10 +6,10 @@ import {
   IsOptional,
   IsString,
   IsUUID,
-} from "class-validator";
-import { UUID } from "crypto";
-import { Gender } from "src/enum/gender.enum";
-import { Relationship } from "src/enum/relationship.enum";
+} from 'class-validator';
+import { UUID } from 'crypto';
+import { Gender } from 'src/enum/gender.enum';
+import { Relationship } from 'src/enum/relationship.enum';
 
 export class createUserProfileDto {
   @IsUUID()

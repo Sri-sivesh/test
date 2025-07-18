@@ -1,15 +1,15 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { Genres } from "src/genres/genres.entity";
-import { Repository } from "typeorm";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { Genres } from 'src/genres/genres.entity';
+import { Repository } from 'typeorm';
 @Injectable()
 export class GenresService {
   constructor(
     @InjectRepository(Genres)
     private readonly genresRepo: Repository<Genres>,
-  ) { }
+  ) {}
 
   async createGenres(data: Partial<Genres>): Promise<Genres> {
     const genres = this.genresRepo.create(data);

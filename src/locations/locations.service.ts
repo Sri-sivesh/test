@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { Location } from "src/locations/location.entity";
-import { Repository } from "typeorm";
-import { updateLocationsDto } from "./dtos/updateLocations.dto";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { Location } from 'src/locations/locations.entity';
+import { Repository } from 'typeorm';
+import { updateLocationsDto } from './dtos/updateLocations.dto';
 
 @Injectable()
 export class LocationsService {
   constructor(
     @InjectRepository(Location)
     private readonly LocationRepo: Repository<Location>,
-  ) { }
+  ) {}
 
   async createLocation(data: Partial<Location>): Promise<Location> {
     const location = this.LocationRepo.create(data);

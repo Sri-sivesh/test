@@ -1,15 +1,15 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { Format } from "src/format/format.entity";
-import { Repository } from "typeorm";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { Format } from 'src/format/format.entity';
+import { Repository } from 'typeorm';
 @Injectable()
 export class FormatService {
   constructor(
     @InjectRepository(Format)
     private readonly formatRepo: Repository<Format>,
-  ) { }
+  ) {}
 
   async createFormat(data: Partial<Format>): Promise<Format> {
     const format = this.formatRepo.create(data);

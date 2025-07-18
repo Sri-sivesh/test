@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { ReviewsRatings } from "src/reviews-ratings/reviews-ratings.entity";
-import { Repository } from "typeorm";
-import { updateReviewsRatingsDto } from "./dtos/updateReviewsRatings.dto";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { ReviewsRatings } from 'src/reviews-ratings/reviews-ratings.entity';
+import { Repository } from 'typeorm';
+import { updateReviewsRatingsDto } from './dtos/updateReviewsRatings.dto';
 
 @Injectable()
 export class ReviewsRatingsService {
   constructor(
     @InjectRepository(ReviewsRatings)
     private readonly reviewsRatingsRepo: Repository<ReviewsRatings>,
-  ) { }
+  ) {}
 
   async createReviewsRatings(
     data: Partial<ReviewsRatings>,

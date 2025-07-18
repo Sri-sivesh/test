@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { FM } from "src/fm/fm.entity";
-import { Repository } from "typeorm";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { FM } from 'src/fm/fm.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class FmService {

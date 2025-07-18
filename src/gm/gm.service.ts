@@ -1,15 +1,15 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { GM } from "src/gm/gm.entity";
-import { Repository } from "typeorm";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { GM } from 'src/gm/gm.entity';
+import { Repository } from 'typeorm';
 @Injectable()
 export class GmService {
   constructor(
     @InjectRepository(GM)
     private readonly gmRepo: Repository<GM>,
-  ) { }
+  ) {}
 
   async createGM(data: Partial<GM>): Promise<GM> {
     const gm = this.gmRepo.create(data);

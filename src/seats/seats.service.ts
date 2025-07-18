@@ -1,16 +1,16 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { Seats } from "src/seats/seats.entity";
-import { Repository } from "typeorm";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { Seats } from 'src/seats/seats.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class SeatsService {
   constructor(
     @InjectRepository(Seats)
     private readonly SeatsRepo: Repository<Seats>,
-  ) { }
+  ) {}
 
   async createSeats(data: Partial<Seats>): Promise<Seats> {
     const seats = this.SeatsRepo.create(data);

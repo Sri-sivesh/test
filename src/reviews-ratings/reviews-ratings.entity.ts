@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { UUID } from "crypto";
+import { UUID } from 'crypto';
 import {
   Column,
   Entity,
@@ -7,12 +7,12 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryColumn,
-} from "typeorm";
-import { userProfile } from "../user-profile/user-profile.entity";
-import { movieDetails } from "../movie-details/movie-details.entity";
-@Entity("reviews-ratings")
+} from 'typeorm';
+import { userProfile } from '../user-profile/user-profile.entity';
+import { movieDetails } from '../movie-details/movie-details.entity';
+@Entity('reviews-ratings')
 export class ReviewsRatings {
-  @PrimaryColumn()
+  @PrimaryColumn({type:'uuid',default: ()=>'gen_random_uuid()'})
   rrId: UUID;
   @Column()
   mId: UUID;
@@ -25,9 +25,9 @@ export class ReviewsRatings {
   @OneToMany(() => ReviewsRatings, (reviewsRatings) => reviewsRatings.rrId)
   reviewsRatings: ReviewsRatings[];
   @ManyToOne(() => userProfile, (up) => up.uId)
-  @JoinColumn({ name: "uId" })
+  @JoinColumn({ name: 'uId' })
   up: userProfile;
   @ManyToOne(() => movieDetails, (movdet) => movdet.mId)
-  @JoinColumn({ name: "mId" })
+  @JoinColumn({ name: 'mId' })
   movdet: movieDetails;
 }

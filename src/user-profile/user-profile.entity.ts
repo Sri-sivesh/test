@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
-import { UUID } from "crypto";
-import { Gender } from "src/enum/gender.enum";
-import { Relationship } from "src/enum/relationship.enum";
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { UUID } from 'crypto';
+import { Gender } from 'src/enum/gender.enum';
+import { Relationship } from 'src/enum/relationship.enum';
+import { Column, Entity, PrimaryColumn} from 'typeorm';
 
-@Entity("user-profile")
+@Entity('user-profile')
 export class userProfile {
-  @PrimaryColumn()
+  @PrimaryColumn({type:'uuid',default: ()=>'gen_random_uuid()'})
   uId: UUID;
   @Column()
   uFname: string;
@@ -14,13 +14,13 @@ export class userProfile {
   uLname: string;
   @Column()
   uEmail: string;
-  @Column({ type: "bigint" })
+  @Column({ type: 'bigint' })
   uPhone: bigint;
   @Column()
   uDOB: Date;
-  @Column({ type: "enum", enum: Gender })
+  @Column({ type: 'enum', enum: Gender })
   uGender: Gender;
-  @Column({ type: "enum", enum: Relationship })
+  @Column({ type: 'enum', enum: Relationship })
   uRelationship: Relationship;
   @Column()
   uAddress: string;

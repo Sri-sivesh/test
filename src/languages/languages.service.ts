@@ -1,15 +1,15 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { Languages } from "src/languages/languages.entity";
-import { Repository } from "typeorm";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { Languages } from 'src/languages/languages.entity';
+import { Repository } from 'typeorm';
 @Injectable()
 export class LanguagesService {
   constructor(
     @InjectRepository(Languages)
     private readonly languagesRepo: Repository<Languages>,
-  ) { }
+  ) {}
 
   async createLanguages(data: Partial<Languages>): Promise<Languages> {
     const languages = this.languagesRepo.create(data);

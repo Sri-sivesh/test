@@ -7,14 +7,14 @@ import {
   Delete,
   Param,
   Body,
-} from "@nestjs/common";
-import { UUID } from "crypto";
-import { FmService } from "./fm.service";
-import { createfmDto } from "./dtos/createfm.dto";
-import { FM } from "./fm.entity";
-import { updatefmDto } from "./dtos/updatefm.dto";
+} from '@nestjs/common';
+import { UUID } from 'crypto';
+import { FmService } from './fm.service';
+import { createfmDto } from './dtos/createfm.dto';
+import { FM } from './fm.entity';
+import { updatefmDto } from './dtos/updatefm.dto';
 
-@Controller("fm")
+@Controller('fm')
 export class FmController {
   constructor(private readonly FmService: FmService) {}
 
@@ -23,26 +23,26 @@ export class FmController {
     return this.FmService.createFM(createfmDto);
   }
 
-  @Get("get-all-fm")
+  @Get('get-all-fm')
   async findAll(): Promise<FM[]> {
     return this.FmService.getAllFm();
   }
 
-  @Get(":fmId")
-  async findOne(@Param("fmId") fmId: UUID): Promise<FM | null> {
+  @Get(':fmId')
+  async findOne(@Param('fmId') fmId: UUID): Promise<FM | null> {
     return this.FmService.getFmById(fmId);
   }
 
-  @Patch(":fmId")
+  @Patch(':fmId')
   async update(
-    @Param("fmId") fmId: UUID,
+    @Param('fmId') fmId: UUID,
     @Body() updatefmDto: updatefmDto,
   ): Promise<FM | null> {
     return this.FmService.updateFm(fmId, updatefmDto);
   }
 
-  @Delete(":fmId")
-  async remove(@Param("fmId") fmId: UUID): Promise<{ deleted: boolean }> {
+  @Delete(':fmId')
+  async remove(@Param('fmId') fmId: UUID): Promise<{ deleted: boolean }> {
     return this.FmService.deleteFm(fmId);
   }
 }

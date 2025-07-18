@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty, IsNumber, IsUUID, Min } from "class-validator";
-import { UUID } from "crypto";
-import { Category } from "src/enum/category.enum";
+import { IsNotEmpty, IsNumber, IsUUID, Min } from 'class-validator';
+import { UUID } from 'crypto';
+import { Category } from 'src/enum/category.enum';
 
 export class createShowSeatsDto {
   @IsUUID()

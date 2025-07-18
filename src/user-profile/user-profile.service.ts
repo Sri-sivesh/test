@@ -1,20 +1,21 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { UUID } from "crypto";
-import { userProfile } from "src/user-profile/user-profile.entity";
-import { Repository } from "typeorm";
-import { createUserProfileDto } from "./dtos/createUserProfile.dto";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UUID } from 'crypto';
+import { userProfile } from 'src/user-profile/user-profile.entity';
+import { Repository } from 'typeorm';
+import { createUserProfileDto } from './dtos/createUserProfile.dto';
 
 @Injectable()
 export class UserProfileService {
   constructor(
     @InjectRepository(userProfile)
     private readonly UserProfileRepo: Repository<userProfile>,
-  ) { }
+  ) {}
 
   async createUserProfile(data: userProfile): Promise<createUserProfileDto> {
     const userProfile = this.UserProfileRepo.create(data);
+    console.log("=================",userProfile)
     return this.UserProfileRepo.save(userProfile);
   }
 

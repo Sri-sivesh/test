@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
-import { Module } from "@nestjs/common";
-import { GmController } from "./gm.controller";
-import { GmService } from "./gm.service";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { GM } from "src/gm/gm.entity";
+import { Module } from '@nestjs/common';
+import { GmController } from './gm.controller';
+import { GmService } from './gm.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { GM } from 'src/gm/gm.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([GM])],
@@ -11,4 +11,4 @@ import { GM } from "src/gm/gm.entity";
   providers: [GmService],
   exports: [GmService],
 })
-export class GmModule { }
+export class GmModule {}

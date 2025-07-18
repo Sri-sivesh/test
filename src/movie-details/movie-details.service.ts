@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { movieDetails } from "src/movie-details/movie-details.entity";
-import { Repository } from "typeorm";
-import { createMovieDetailsDto } from "./dtos/createMovieDetails.dto";
-import { UUID } from "crypto";
-import { updateMovieDetailsDto } from "./dtos/updateMovieDetails.dto";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { movieDetails } from 'src/movie-details/movie-details.entity';
+import { Repository } from 'typeorm';
+import { createMovieDetailsDto } from './dtos/createMovieDetails.dto';
+import { UUID } from 'crypto';
+import { updateMovieDetailsDto } from './dtos/updateMovieDetails.dto';
 
 @Injectable()
 export class MovieDetailsService {
